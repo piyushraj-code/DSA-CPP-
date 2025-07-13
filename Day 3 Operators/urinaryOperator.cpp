@@ -11,6 +11,7 @@ int main(){
     // Decrement Operator
     int b = 10;
     cout << --b << endl;
+    --b;
     cout << b << endl;
     cout << b-- << endl;
     cout << b << endl;
