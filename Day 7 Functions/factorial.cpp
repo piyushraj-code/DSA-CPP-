@@ -2,13 +2,27 @@
 using namespace std;
 int factorial(int n){
     int product = 1;
-    for(int i = 1; i <= n; i++){
+    if(n < 0){
+        cout << "Invalid argument!!" << endl;
+        cout << "Enter valid non negative integer: ";
+        cin >> n;
+        return factorial(n);
+    }
+    else if(n == 0){
+        return product;
+    }
+    else{
+        for(int i = 1; i <= n; i++){
         product *= i;
+    }
     }
     return product;
 }
 
 int main(){
-    cout << factorial(4) << endl;
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
+    cout << factorial(n) << endl;
     return 0;
 }
