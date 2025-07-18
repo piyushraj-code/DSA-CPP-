@@ -22,10 +22,31 @@ bool isPalindrome(int n){
     return isPalin;
     
 }
+
+// Method 2 Using reversing the digit
+
+int revDig(int n){
+    int result = 0;
+    while(n > 0){
+        int lastDig = n%10;
+        result = result*10 + lastDig;
+        n = n / 10;
+    }
+    return result;
+}
+
+bool isPalindrome2(int n){
+    int reversed = revDig(n);
+    if(reversed == n){
+        return true;
+    }
+    return false;
+}
 int main(){
     int n;
     cout << "Enter n: ";
     cin >> n;
-    cout << (isPalindrome(n) ? "Yes" : "No");
+    cout << (isPalindrome(n) ? "Yes" : "No") << endl;
+    cout << (isPalindrome2(n) ? "Yes" : "No") << endl;
     return 0;
 }
